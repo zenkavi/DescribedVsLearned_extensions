@@ -1,6 +1,6 @@
-# Translating Psychtoolbox task into
+# Translating Psychtoolbox task into Gorilla
 
-- Approach: Use Task Builder 2 with Task Builder Scripts  
+- Approach: ~~Use Task Builder 2 with Task Builder Scripts~~  
 
 - Task details to be translated:  
   - Random ITI for fixation cross (4-7 secs)  
@@ -15,7 +15,7 @@
     - Block of 60 probabilities for each run is shuffled in `SetupSession.m` L129
     - Lotteries are determined by first appending the 20 lotteries to make an array with sufficient values for the number of trials in the run and then shuffling this new array. Each lottery appears 3 times in each run but with a randomly chosen relevance
     - Reward probabilities for both fractals are pre-computed (independently for each fractal) before each run for the 60 trials of the run within the drift boundaries
-    - ITIs for the 60 trials of the run are also determined in advance from a random shuffling of an array with 60 values ranging between 4 and 7
+    - ITIs for the 60 trials of the run are also determined in advance from a random shuffling of an array with 60 values ranging between 4 and 7. Then, in `RunTrial.m` they are incremented by the remainder from the previous trial when presenting the fixation screen
   - Red box around the rewarded attribute of chosen bundle
   - Fractal outcomes after each trial
   - Trial reward after each trial
@@ -27,6 +27,14 @@
     - At the end of all sessions check to make sure the total reward is within the min and max reward bounds. These are set as 80 and 120 in `SetupExperiment.m` but not sure how these translate to bonusses.
   - Compute task reward
 
+- Things that can be precomputed  
+  - probFractalDraw
+  - fractal reward probs
+  - lotteries
 
+- Things that need to be updated   
+  - trialwise: ITI  
+  - runwise: run reward  
+  - experimentwise: total reward  
 
 - How long does the task take?
