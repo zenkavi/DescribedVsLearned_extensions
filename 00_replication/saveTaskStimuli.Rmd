@@ -1,0 +1,49 @@
+---
+title: "Save Task Stimuli Images for the Gorilla"
+output: html_document
+---
+
+```{r}
+library(ggplot2)
+fig_out_path = '/Users/zeynepenkavi/Documents/RangelLab/DescribedVsLearned_extensions/00_replication/stimuli/'
+```
+
+Gray line
+
+```{r}
+
+```
+
+Reference lottery pie chart
+
+```{r}
+# Create Data
+data <- data.frame(
+  group=LETTERS[1:2],
+  value=c(50,50)
+)
+
+# Basic piechart
+p=ggplot(data, aes(x="", y=value, fill=group)) +
+  geom_bar(stat="identity", width=1) +
+  coord_polar("y", start=0)+
+  theme_void()+
+  scale_fill_manual(values=c("black", "white"))+
+  theme(panel.background = element_rect(fill="black"),
+        legend.position = "none", 
+        axis.title.x = element_text(margin = margin(t = -50, r = 0, b = 0, l = 0), color="white", size=150),
+        )+
+  labs(y="$1")
+ggsave(file=paste0(fig_out_path, 'pie_50_1.jpg'), p, height = 8, width=11, units="in", bg="black")
+
+```
+
+Other lotteries pie chart
+
+```{r}
+lotts = data.frame(prob = c(1, .25, .2, .1, 1, .1, .05, .01, 1, .3, .15, .1, 1, .7, .35, .1, 1, .9, .45, .1), 
+                   reward = c("$0.50", "$2", "$2.5", "$5", "$0.10", "$1", "$2", "$10", "$0.30", "$1", "$2", "$3", "$0.70", "$1", "$2", "$7", "$0.90", "$1", "$2", "$9"))
+
+
+
+```
