@@ -8,12 +8,6 @@ library(ggplot2)
 fig_out_path = '/Users/zeynepenkavi/Documents/RangelLab/DescribedVsLearned_extensions/00_replication/stimuli/'
 ```
 
-Gray line
-
-```{r}
-
-```
-
 Reference lottery pie chart
 
 ```{r}

@@ -24,13 +24,15 @@
     - After each run the reward for that run only is presented as `Amount earned: ...`
     - Each session in the scanner ends with `End of session. Please wait for experimenter` but this is not necessary for Gorilla. Replace it with something like `End of block. Please click continue when ready to begin the next block`. Maybe add a mandatory wait period for this too before the continue button appears.
     - Total reward for the experiment is the sum of rewarded trials from each run
-    - At the end of all sessions check to make sure the total reward is within the min and max reward bounds. These are set as 80 and 120 in `SetupExperiment.m` but not sure how these translate to bonusses.
+    - At the end of all sessions check to make sure the total reward is within the min and max reward bounds. These are set as $80 and $120 in `SetupExperiment.m`.
+    - If no response within 4 seconds show `No response recorded!`
   - Compute task reward
 
 - Things that can be precomputed  
   - probFractalDraw
   - fractal reward probs
   - lotteries
+  - fractal images
 
 - Things that need to be updated   
   - trialwise: ITI  
