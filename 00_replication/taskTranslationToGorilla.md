@@ -1,6 +1,6 @@
 # Translating Psychtoolbox task into Gorilla
 
-- Approach: ~~Use Task Builder 2 with Task Builder Scripts~~  
+- Approach: Gorila Task Builder 1 with Task Builder Script  
 
 - Task details to be translated:  
   - Random ITI for fixation cross (4-7 secs)  
@@ -37,6 +37,6 @@
 - Things that need to be updated   
   - trialwise: ITI  
   - runwise: run reward  
-  - experimentwise: total reward  
+  - experimentwise: total reward
 
 - How long does the task take?
